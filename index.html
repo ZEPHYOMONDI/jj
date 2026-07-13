@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Dialogue – Your Trusted News Source</title>
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============================================================
+     STICKY NAVIGATION / HEADER
+============================================================ -->
+<header id="main-header" class="sticky-top">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid px-3 px-lg-5">
+
+      <!-- Logo -->
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="images/backgroundimage.jpeg" alt="Digital Dialogue Logo" class="logo-img" id="siteLogoImg" />
+        <span class="logo-text">Digital<span class="logo-accent">Dialogue</span></span>
+      </a>
+
+      <!-- Mobile toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navMenu" aria-controls="navMenu"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Nav links + search + login -->
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav mx-auto gap-1">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#trending">Trending</a></li>
+          <li class="nav-item"><a class="nav-link" href="#breaking">Breaking News</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#community">Community</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- Search -->
+        <div class="search-wrap me-3">
+          <input type="text" id="searchInput" class="search-input" placeholder="Search news…" />
+          <button class="search-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- ============================================================
+     BREAKING NEWS TICKER
+============================================================ -->
+<section id="breaking" class="breaking-bar">
+  <div class="d-flex align-items-center h-100">
+    <span class="breaking-label">
+      <i class="fas fa-bolt me-1"></i>BREAKING NEWS
+    </span>
+    <div class="ticker-wrap">
+      <div class="ticker-track" id="tickerTrack"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     MAIN LAYOUT  (sidebar + content)
+============================================================ -->
+<div class="container-fluid px-3 px-lg-5 main-layout">
+  <div class="row g-4">
+
+    <!-- ====================================================
+         LEFT SIDEBAR
+    ==================================================== -->
+    <aside class="col-12 col-lg-3 col-xl-2 sidebar-left">
+      <div class="row-sidebar-inner">
+
+      <!-- Profile circle -->
+      <div class="profile-card fade-in">
+        <div class="profile-img-wrap">
+          <img src="images/backgroundimage.jpeg" alt="Profile" class="profile-img" id="profileImg" />
+        </div>
+
+        <!-- Welcome text -->
+        <div class="welcome-body text-center mt-3">
+          <h5 class="welcome-title">WELCOME TO<br /><span>DIGITAL DIALOGUE</span></h5>
+          <p class="welcome-text">
+            Stay informed with trusted news, trending stories, community discussions, and inspiring photo updates from around the world.
+          </p>
+          <div class="d-flex gap-2 justify-content-center flex-wrap mt-3">
+            <a href="#latest" class="btn btn-sm btn-primary-custom">Read More</a>
+            <a href="#trending" class="btn btn-sm btn-outline-custom">Explore News</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /row-sidebar-inner -->
+    </aside><!-- /sidebar-left -->
+
+    <!-- ====================================================
+         MAIN CONTENT COLUMN
+    ==================================================== -->
+    <main class="col-12 col-lg-9 col-xl-10">
+
+      <!-- ================================================
+           HERO SECTION
+      ================================================ -->
+      <section class="hero fade-in" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <span class="hero-badge"><i class="fas fa-bolt me-1"></i>Trusted News</span>
+          <h1 class="hero-headline">Your Trusted Source for<br />News and Stories</h1>
+          <p class="hero-sub">
+            Breaking news, trending topics, politics, business,<br class="d-none d-md-block" />
+            entertainment, education, and health — all in one place.
+          </p>
+          <div class="hero-btns d-flex gap-3 flex-wrap justify-content-center">
+            <a href="#latest" class="btn btn-hero-primary"><i class="fas fa-newspaper me-2"></i>Latest News</a>
+            <a href="#community" class="btn btn-hero-outline"><i class="fas fa-users me-2"></i>Join Community</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================
+           NEWS CATEGORIES
+      ================================================ -->
+      <section class="section-block fade-in" id="categories">
+        <h2 class="section-title"><span>News</span> Categories</h2>
+        <div class="row g-3" id="categoriesGrid">
+          <!-- JS will fill or these static cards suffice -->
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="cat-card" style="--cat-color:#e63946">
+              <i class="fas fa-landmark"></i><span>Politics</span>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="cat-card" style="--cat-color:#2a9d8f">
+              <i class="fas fa-chart-line"></i><span>Business</span>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="cat-card" style="--cat-color:#6d6875">
+              <i class="fas fa-graduation-cap"></i><span>Education</span>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="cat-card" style="--cat-color:#e9c46a">
+              <i class="fas fa-film"></i><span>Entertainment</span>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="cat-card" style="--cat-color:#06d6a0">
+              <i class="fas fa-heartbeat"></i><span>Health</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================
+           TRENDING NEWS  (populated by script.js)
+      ================================================ -->
+      <section class="section-block fade-in" id="trending">
+        <h2 class="section-title"><span>Trending</span> News</h2>
+        <div class="row g-4" id="trendingGrid"></div>
+      </section>
+
+      <!-- ================================================
+           PHOTO GALLERY  (populated by script.js)
+           Single combined gallery that auto-slides left
+      ================================================ -->
+      <section class="section-block fade-in" id="gallery">
+        <h2 class="section-title"><span>Photo</span> Gallery</h2>
+        <div class="gallery-slider-wrap">
+          <div class="gallery-slider-track" id="galleryGrid"></div>
+        </div>
+      </section>
+
+      <!-- ================================================
+           LATEST NEWS  (populated by script.js)
+      ================================================ -->
+      <section class="section-block fade-in" id="latest">
+        <h2 class="section-title"><span>Latest</span> News</h2>
+        <div class="row g-4" id="latestGrid"></div>
+      </section>
+
+      <!-- ================================================
+           COMMUNITY COMMENTS
+      ================================================ -->
+      <section class="section-block fade-in" id="community">
+        <h2 class="section-title"><span>Community</span> Discussions</h2>
+        <div class="row g-4">
+
+          <!-- Comment Form -->
+          <div class="col-lg-5">
+            <div class="comment-form-card">
+              <h5><i class="fas fa-pen-to-square me-2 text-primary-custom"></i>Leave a Comment</h5>
+              <form id="commentForm" novalidate>
+                <div class="mb-3">
+                  <label for="commentName" class="form-label">Your Name</label>
+                  <input type="text" id="commentName" class="form-control custom-input" placeholder="Enter your name" required />
+                </div>
+                <div class="mb-3">
+                  <label for="commentEmail" class="form-label">Email Address</label>
+                  <input type="email" id="commentEmail" class="form-control custom-input" placeholder="Enter your email" required />
+                </div>
+                <div class="mb-3">
+                  <label for="commentText" class="form-label">Comment</label>
+                  <textarea id="commentText" class="form-control custom-input" rows="4" placeholder="Share your thoughts…" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary-custom w-100">
+                  <i class="fas fa-paper-plane me-2"></i>Post Comment
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Comments Display -->
+          <div class="col-lg-7">
+            <div id="commentsContainer"></div>
+          </div>
+        </div>
+      </section>
+
+
+
+    </main><!-- /main content column -->
+  </div><!-- /row -->
+</div><!-- /main-layout -->
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer id="contact">
+  <div class="container-fluid px-3 px-lg-5">
+    <div class="row g-3 footer-top">
+
+      <!-- Contact (left) -->
+      <div class="col-md-4">
+        <h6 class="footer-heading">Contact Us</h6>
+        <ul class="footer-contact">
+          <li><i class="fas fa-map-marker-alt"></i>123 Nairobi, Kenya</li>
+          <li><i class="fas fa-phone"></i>+254 726 273051</li>
+          <li><i class="fas fa-envelope"></i>info@josephblog.com</li>
+        </ul>
+      </div>
+
+      <!-- Brand + About (under the logo) -->
+      <div class="col-md-4">
+        <div class="footer-brand text-center text-md-start">
+          <a href="#" class="d-inline-flex align-items-center gap-2 mb-2 text-decoration-none">
+            <img src="images/backgroundimage.jpeg" alt="Digital Dialogue Logo" class="logo-img sm" id="footerLogoImg" />
+            <span class="logo-text">Digital<span class="logo-accent">Dialogue</span></span>
+          </a>
+          <h6 class="footer-heading mt-2">About</h6>
+          <p>Your trusted source for balanced, timely, and insightful news from around the globe.</p>
+        </div>
+      </div>
+
+      <!-- Newsletter + Social (right) -->
+      <div class="col-md-4 text-center text-md-end">
+        <h6 class="footer-heading">Newsletter</h6>
+        <form class="input-group footer-newsletter ms-md-auto" id="footerNewsletterForm">
+          <input type="email" class="form-control" placeholder="Your email…" required />
+          <button class="btn btn-newsletter-sm" type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+        <div class="social-icons mt-3 justify-content-center justify-content-md-end">
+          <a href="#" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+    </div><!-- /footer-top -->
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>&copy; 2026 <strong>Digital Dialogue</strong>. All rights reserved. Designed with <i class="fas fa-heart text-danger mx-1"></i>for great journalism.</p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<!-- Lightbox Modal -->
+<div class="lightbox-overlay" id="lightboxOverlay" role="dialog" aria-modal="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close"><i class="fas fa-times"></i></button>
+  <img src="" alt="Gallery photo" class="lightbox-img" id="lightboxImg" />
+  <div class="lightbox-video-wrap d-none" id="lightboxVideoWrap">
+    <iframe id="lightboxVideo" src="" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- Post Detail / "Read More" Modal -->
+<div class="post-modal-overlay" id="postModalOverlay" role="dialog" aria-modal="true">
+  <div class="post-modal">
+    <button class="post-modal-close" id="postModalClose" aria-label="Close"><i class="fas fa-times"></i></button>
+    <div class="post-modal-scroll">
+      <img src="" alt="" class="post-modal-img" id="postModalImg" />
+      <div class="post-modal-body">
+        <span class="card-category" id="postModalCategory"></span>
+        <h2 class="post-modal-title" id="postModalTitle"></h2>
+        <div class="post-modal-meta">
+          <span><i class="fas fa-user-pen me-1"></i><span id="postModalAuthor"></span></span>
+          <span><i class="far fa-calendar me-1"></i><span id="postModalDate"></span></span>
+        </div>
+        <div class="post-modal-video d-none" id="postModalVideoWrap">
+          <iframe id="postModalVideo" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <p class="post-modal-text" id="postModalText"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Search Results Modal -->
+<div class="search-modal-overlay" id="searchModalOverlay" role="dialog" aria-modal="true">
+  <div class="search-modal">
+    <div class="search-modal-header">
+      <h5><i class="fas fa-search me-2"></i>Search Results for "<span id="searchModalQuery"></span>"</h5>
+      <button class="post-modal-close" id="searchModalClose" aria-label="Close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="search-modal-body" id="searchModalBody"></div>
+  </div>
+</div>
+
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS -->
+<script src="script.js"></script>
+</body>
+</html>
